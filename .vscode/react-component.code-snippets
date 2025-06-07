@@ -1,0 +1,18 @@
+{
+    "React Functional Component": {
+      "prefix": "rcomp",
+      "body": [
+        "import React from 'react';",
+        "",
+        "const ${TM_FILENAME_BASE} = () => {",
+        "  return (",
+        "    <div>${1:Content}</div>",
+        "  );",
+        "};",
+        "",
+        "export default ${TM_FILENAME_BASE};"
+      ],
+      "description": "Crea un componente funcional de React con nombre basado en el archivo"
+    }
+  }
+  

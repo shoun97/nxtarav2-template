@@ -1,0 +1,869 @@
+@import 'tailwindcss';
+
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Futura URW Extra Bold';
+  src: url('/fonts/Futura URW Extra Bold Regular.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura BK';
+  src: url('/fonts/futurabkbtrusbyme_book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura BK';
+  src: url('/fonts/futurabkbtrusbyme_bookitalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+:root {
+  /* Colores primarios */
+  --color-primary-1: #000000;
+  --color-primary-2: #ED0C7A;
+  --color-primary-3: #ffffff;
+  --color-primary-4: #ffffff; /*no se usa, si se usara refactorizar*/
+  --color-primary-5: #f5f5f7; /*no se usa, si se usara refactorizar*/
+
+  /* Colores secundarios */
+  --color-secondary-1: #00000099;
+  --color-secondary-2: #292929;
+  --color-secondary-3: #00000030;
+  --color-secondary-4: #ececec; /*no se usa*/
+  --color-secondary-5: #fbfbfd; /*no se usa*/
+
+  /* Colores terciarios */
+  --color-tertiary-1: #a4a1a5; /*no se usa, si se usara refactorizar*/
+  --color-tertiary-2: #92d8d4; /*no se usa, si se usara refactorizar*/
+  --color-tertiary-3: #42445e; /*no se usa, si se usara refactorizar*/
+  --color-tertiary-4: #0096ed; /*no se usa, si se usara refactorizar*/
+  --color-tertiary-5: #d9d9d9; /*no se usa, si se usara refactorizar*/
+
+  /* Colores complementarios */
+  --color-complementary-1: #00b0a6; /*no se usa, si se usara refactorizar*/
+  --color-complementary-2: #df4e5d; /*no se usa, si se usara refactorizar*/
+  --color-complementary-3: #0072d3; /*no se usa, si se usara refactorizar*/
+  --color-complementary-4: #e5b800; /*no se usa, si se usara refactorizar*/
+
+  /* Otros estilos */
+  --border-radius: 16px;
+
+  --background-semi-dark: #323233cc;
+  --background-semi-light: rgba(255, 255, 255, 0.2);
+
+  --filter-blur: blur(4px);
+}
+
+* {
+  overflow-x: hidden !important;
+}
+
+main * {
+  overflow-y: hidden !important;
+}
+
+Footer * {
+  overflow-y: hidden !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-semi-light: rgba(255, 255, 255, 0.2);
+  }
+}
+
+
+#docs *{
+  overflow: unset !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Futura BK", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1, h2, h3, .title-bold {
+  font-family: "Futura URW Extra Bold", sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Estilos para encabezados */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0.5rem !important;
+}
+
+h1,
+.h1 {
+  /*no se usa, si se usara refactorizar*/
+  font-size: 3.052rem !important;
+}
+h2,
+.h2 {
+  /*no se usa, si se usara refactorizar*/
+  font-size: 2.441rem !important;
+}
+h3,
+.h3 {
+  /*no se usa, si se usara refactorizar*/
+  font-size: 1.953rem !important;
+}
+h4,
+.h4 {
+  font-size: 42px !important;
+  font-weight: 500;
+  line-height: 123.5%;
+  letter-spacing: 2px;
+}
+h5,
+.h5 {
+  font-size: 26px !important;
+  font-weight: 400;
+  line-height: 134.5%;
+}
+h6,
+.h6 {
+  font-size: 28px !important;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: 0.15px;
+}
+.subtitle {
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 175%;
+  letter-spacing: 1px;
+}
+.subtitle-card {
+  font-size: 16px !important;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+  text-align: center;
+}
+small {
+  font-size: 14px !important;
+  line-height: 22px;
+  letter-spacing: 0.46px;
+  text-transform: capitalize;
+}
+span {
+ /*  font-size: 18px !important; */
+  line-height: 20.2px;
+  font-weight: 400;
+  letter-spacing: 0.17px;
+}
+p {
+  font-size: 16px !important;
+  line-height: 24px;
+  letter-spacing: 1px;
+}
+
+/* Otros estilos */
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(9, 35, 66, 0.15);
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Estilos para botones primarios */
+
+[class^='btn-primary'] {
+  background: var(--color-primary-2) !important;
+  padding: 4px 10px;
+  color: var(--color-primary-3) !important;
+  border-radius: var(--border-radius) !important;
+  transition: background 300ms ease-in-out;
+  text-decoration: none !important;
+}
+
+[class^='btn-primary']:not(.disabled, :disabled):hover,
+[class^='btn-primary']:not(.disabled, :disabled):active,
+[class^='btn-primary']:not(.disabled, :disabled):focus {
+  color: var(--color-primary-3) !important;
+  background: var(--color-primary-1) !important;
+}
+
+[class^='btn-primary'] svg.path-fill path,
+[class^='btn-primary'] li svg.path-fill path {
+  fill: var(--color-primary-3) !important;
+}
+
+[class^='btn-primary'] svg.path-stroke path,
+[class^='btn-primary'] li svg.path-stroke path {
+  stroke: var(--color-primary-3) !important;
+}
+
+[class^='btn-secondary'] {
+  background: transparent !important;
+  padding: 4px 10px;
+  color: var(--color-primary-2) !important;
+  border-radius: var(--border-radius) !important;
+  transition: background 300ms ease-in-out;
+  text-decoration: none !important;
+}
+
+
+
+/* Estilos para botones secundarios */
+
+[class^='btn-secondary']:not(.disabled, :disabled):hover,
+[class^='btn-secondary']:not(.disabled, :disabled):active,
+[class^='btn-secondary']:not(.disabled, :disabled):focus {
+  color: var(--color-primary-3) !important;
+  background: var(--color-primary-2) !important;
+}
+
+[class^='btn-secondary'] svg.path-fill path,
+[class^='btn-secondary'] li svg.path-fill path {
+  fill: var(--color-primary-2) !important;
+}
+
+[class^='btn-secondary'] svg.path-stroke path,
+[class^='btn-secondary'] li svg.path-stroke path {
+  stroke: var(--color-primary-2) !important;
+}
+
+[class^='btn-secondary']:hover svg.path-fill path,
+[class^='btn-secondary']:hover li svg.path-fill path {
+  fill: var(--color-primary-3) !important;
+}
+
+[class^='btn-secondary']:hover svg.path-stroke path,
+[class^='btn-secondary']:hover li svg.path-stroke path {
+  stroke: var(--color-primary-3) !important;
+}
+
+/** Estilos de Colores de Texto */
+
+.text-primary-1 {
+  color: var(--color-primary-1) !important;
+}
+
+.text-primary-2 {
+  color: var(--color-primary-2) !important;
+}
+
+.text-primary-3 {
+  color: var(--color-primary-3) !important;
+}
+
+.text-primary-4 {
+  color: var(--color-primary-4) !important;
+}
+
+.text-primary-5 {
+  color: var(--color-primary-5) !important;
+}
+
+.text-secondary-1 {
+  color: var(--color-secondary-1) !important;
+}
+
+.text-secondary-2 {
+  color: var(--color-secondary-2) !important;
+}
+
+.text-secondary-3 {
+  color: var(--color-secondary-3) !important;
+}
+
+.text-secondary-4 {
+  color: var(--color-secondary-4) !important;
+}
+
+.text-secondary-5 {
+  color: var(--color-secondary-5) !important;
+}
+
+.text-tertiary-1 {
+  color: var(--color-tertiary-1) !important;
+}
+
+.text-tertiary-2 {
+  color: var(--color-tertiary-2) !important;
+}
+
+.text-tertiary-3 {
+  color: var(--color-tertiary-3) !important;
+}
+
+.text-tertiary-4 {
+  color: var(--color-tertiary-4) !important;
+}
+
+.text-tertiary-5 {
+  color: var(--color-tertiary-5) !important;
+}
+
+.text-complementary-1 {
+  color: var(--color-complementary-1) !important;
+}
+
+.text-complementary-2 {
+  color: var(--color-complementary-2) !important;
+}
+
+.text-complementary-3 {
+  color: var(--color-complementary-3) !important;
+}
+
+.text-complementary-4 {
+  color: var(--color-complementary-4) !important;
+}
+
+/** Estilos para los bordes */
+
+.border-black {
+  border-color: #000 !important;
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+.border-primary-1 {
+  border-color: var(--color-primary-1) !important;
+}
+
+.border-primary-2 {
+  border-color: var(--color-primary-2) !important;
+}
+
+.border-primary-3 {
+  border-color: var(--color-primary-3) !important;
+}
+
+.border-primary-4 {
+  border-color: var(--color-primary-4) !important;
+}
+
+.border-primary-5 {
+  border-color: var(--color-primary-5) !important;
+}
+
+.border-secondary-1 {
+  border-color: var(--color-secondary-1) !important;
+}
+
+.border-secondary-2 {
+  border-color: var(--color-secondary-2) !important;
+}
+
+.border-secondary-3 {
+  border-color: var(--color-secondary-3) !important;
+}
+
+.border-secondary-4 {
+  border-color: var(--color-secondary-4) !important;
+}
+
+.border-secondary-5 {
+  border-color: var(--color-secondary-5) !important;
+}
+
+.border-tertiary-1 {
+  border-color: var(--color-tertiary-1) !important;
+}
+
+.border-tertiary-2 {
+  border-color: var(--color-tertiary-2) !important;
+}
+
+.border-tertiary-3 {
+  border-color: var(--color-tertiary-3) !important;
+}
+
+.border-tertiary-4 {
+  border-color: var(--color-tertiary-4) !important;
+}
+
+.border-tertiary-5 {
+  border-color: var(--color-tertiary-5) !important;
+}
+
+.border-complementary-1 {
+  border-color: var(--color-complementary-1) !important;
+}
+
+.border-complementary-2 {
+  border-color: var(--color-complementary-2) !important;
+}
+
+.border-complementary-3 {
+  border-color: var(--color-complementary-3) !important;
+}
+
+.border-complementary-4 {
+  border-color: var(--color-complementary-4) !important;
+}
+
+.input-presenter-border {
+  border-radius: var(--border-radius);
+}
+
+/** Estilos para los backgrounds */
+
+.bg-black-transparent {
+  background-color: var(--background-black-shadow) !important;
+}
+
+.bg-gray-transparent {
+  background-color: var(--background-gray-shadow) !important;
+}
+
+.bg-black-transparent:hover {
+  background-color: var(--color-tertiary-5) !important;
+}
+
+.bg-black-transparent:hover svg.path-fill path,
+.bg-black-transparent:hover li svg.path-fill path {
+  fill: var(--color-secondary-2) !important;
+}
+
+.bg-black-transparent:hover svg.path-stroke path,
+.bg-black-transparent:hover li svg.path-stroke path {
+  stroke: var(--color-secondary-2) !important;
+}
+
+.bg-primary-1 {
+  background-color: var(--color-primary-1) !important;
+  background: #0E0B1C;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.bg-primary-2 {
+  background-color: var(--color-primary-2) !important;
+}
+
+.bg-primary-3 {
+  background-color: var(--color-primary-3) !important;
+}
+
+.bg-primary-4 {
+  background-color: var(--color-primary-4) !important;
+}
+
+.bg-primary-5 {
+  background-color: var(--color-primary-5) !important;
+}
+
+.bg-secondary-1 {
+  background-color: var(--color-secondary-1) !important;
+}
+
+.bg-secondary-2 {
+  background-color: var(--color-secondary-2) !important;
+}
+
+.bg-secondary-3 {
+  background-color: var(--color-secondary-3) !important;
+}
+
+.bg-secondary-4 {
+  background-color: var(--color-secondary-4) !important;
+}
+
+.bg-secondary-5 {
+  background-color: var(--color-secondary-5) !important;
+}
+
+.bg-tertiary-1 {
+  background-color: var(--color-tertiary-1) !important;
+}
+
+.bg-tertiary-2 {
+  background-color: var(--color-tertiary-2) !important;
+}
+
+.bg-tertiary-3 {
+  background-color: var(--color-tertiary-3) !important;
+}
+
+.bg-tertiary-4 {
+  background-color: var(--color-tertiary-4) !important;
+}
+
+.bg-tertiary-5 {
+  background-color: var(--color-tertiary-5) !important;
+}
+
+.bg-complementary-1 {
+  background-color: var(--color-complementary-1) !important;
+}
+
+.bg-complementary-2 {
+  background-color: var(--color-complementary-2) !important;
+}
+
+.bg-complementary-3 {
+  background-color: var(--color-complementary-3) !important;
+}
+
+.bg-complementary-4 {
+  background-color: var(--color-complementary-4) !important;
+}
+
+/** Estilos para los svg */
+
+svg.path-fill path,
+li svg.path-fill path {
+  transition: fill 0.2s ease-in-out !important;
+}
+
+svg.path-stroke path,
+li svg.path-stroke path {
+  transition: stroke 0.2s ease-in-out !important;
+}
+
+.svg-12 svg {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.svg-16 svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.svg-18 svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.svg-24 svg {
+  width: 24px !important;
+}
+
+.svg-32 svg {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.svg-button svg {
+  height: 32px !important;
+}
+
+.svg-54 svg {
+  width: 54px !important;
+  height: 54px !important;
+}
+
+.svg-64 svg {
+  width: 64px !important;
+  height: 64px !important;
+}
+
+.svg-primary-1 svg.path-fill path,
+.svg-primary-1 li svg.path-fill path {
+  fill: var(--color-primary-1) !important;
+}
+
+.svg-primary-1 svg.path-stroke path,
+.svg-primary-1 li svg.path-stroke path {
+  stroke: var(--color-primary-1) !important;
+}
+
+.svg-primary-2 svg.path-fill path,
+.svg-primary-2 li svg.path-fill path {
+  fill: var(--color-primary-2) !important;
+}
+
+.svg-primary-2 svg.path-stroke path,
+.svg-primary-2 li svg.path-stroke path {
+  stroke: var(--color-primary-2) !important;
+}
+
+.svg-primary-3 svg.path-fill path,
+.svg-primary-3 li svg.path-fill path {
+  fill: var(--color-primary-3) !important;
+}
+
+.svg-primary-3 svg.path-stroke path,
+.svg-primary-3 li svg.path-stroke path {
+  stroke: var(--color-primary-3) !important;
+}
+
+.svg-primary-4 svg.path-fill path,
+.svg-primary-4 li svg.path-fill path {
+  fill: var(--color-primary-4) !important;
+}
+
+.svg-primary-4 svg.path-stroke path,
+.svg-primary-4 li svg.path-stroke path {
+  stroke: var(--color-primary-4) !important;
+}
+
+.svg-primary-5 svg.path-fill path,
+.svg-primary-5 li svg.path-fill path {
+  fill: var(--color-primary-5) !important;
+}
+
+.svg-primary-5 svg.path-stroke path,
+.svg-primary-5 li svg.path-stroke path {
+  stroke: var(--color-primary-5) !important;
+}
+
+.svg-secondary-1 svg.path-fill path,
+.svg-secondary-1 li svg.path-fill path {
+  fill: var(--color-secondary-1) !important;
+}
+
+.svg-secondary-1 svg.path-stroke path,
+.svg-secondary-1 li svg.path-stroke path {
+  stroke: var(--color-secondary-1) !important;
+}
+
+.svg-secondary-2 svg.path-fill path,
+.svg-secondary-2 li svg.path-fill path {
+  fill: var(--color-secondary-2) !important;
+}
+
+.svg-secondary-2 svg.path-stroke path,
+.svg-secondary-2 li svg.path-stroke path {
+  stroke: var(--color-secondary-2) !important;
+}
+
+.svg-secondary-3 svg.path-fill path,
+.svg-secondary-3 li svg.path-fill path {
+  fill: var(--color-secondary-3) !important;
+}
+
+.svg-secondary-3 svg.path-stroke path,
+.svg-secondary-3 li svg.path-stroke path {
+  stroke: var(--color-secondary-3) !important;
+}
+
+.svg-secondary-4 svg.path-fill path,
+.svg-secondary-4 li svg.path-fill path {
+  fill: var(--color-secondary-4) !important;
+}
+
+.svg-secondary-4 svg.path-stroke path,
+.svg-secondary-4 li svg.path-stroke path {
+  stroke: var(--color-secondary-4) !important;
+}
+
+.svg-secondary-5 svg.path-fill path,
+.svg-secondary-5 li svg.path-fill path {
+  fill: var(--color-secondary-5) !important;
+}
+
+.svg-secondary-5 svg.path-stroke path,
+.svg-secondary-5 li svg.path-stroke path {
+  stroke: var(--color-secondary-5) !important;
+}
+
+.svg-tertiary-1 svg.path-fill path,
+.svg-tertiary-1 li svg.path-fill path {
+  fill: var(--color-tertiary-1) !important;
+}
+
+.svg-tertiary-1 svg.path-stroke path,
+.svg-tertiary-1 li svg.path-stroke path {
+  stroke: var(--color-tertiary-1) !important;
+}
+
+.svg-tertiary-2 svg.path-stroke path,
+.svg-tertiary-2 li svg.path-stroke path {
+  stroke: var(--color-tertiary-2) !important;
+}
+
+.svg-tertiary-3 svg.path-fill path,
+.svg-tertiary-3 li svg.path-fill path {
+  fill: var(--color-tertiary-3) !important;
+}
+
+.svg-tertiary-3 svg.path-stroke path,
+.svg-tertiary-3 li svg.path-stroke path {
+  stroke: var(--color-tertiary-3) !important;
+}
+
+.svg-tertiary-4 svg.path-fill path,
+.svg-tertiary-4 li svg.path-fill path {
+  fill: var(--color-tertiary-4) !important;
+}
+
+.svg-tertiary-4 svg.path-stroke path,
+.svg-tertiary-4 li svg.path-stroke path {
+  stroke: var(--color-tertiary-4) !important;
+}
+
+.svg-tertiary-5 svg.path-fill path,
+.svg-tertiary-5 li svg.path-fill path {
+  fill: var(--color-tertiary-5) !important;
+}
+
+.svg-tertiary-5 svg.path-stroke path,
+.svg-tertiary-5 li svg.path-stroke path {
+  stroke: var(--color-tertiary-5) !important;
+}
+
+.svg-complementary-1 svg.path-fill path,
+.svg-complementary-1 li svg.path-fill path {
+  fill: var(--color-complementary-1) !important;
+}
+
+.svg-complementary-1 svg.path-stroke path,
+.svg-complementary-1 li svg.path-stroke path {
+  stroke: var(--color-complementary-1) !important;
+}
+
+.svg-complementary-2 svg.path-fill path,
+.svg-complementary-2 li svg.path-fill path {
+  fill: var(--color-complementary-2) !important;
+}
+
+.svg-complementary-2 svg.path-stroke path,
+.svg-complementary-2 li svg.path-stroke path {
+  stroke: var(--color-complementary-2) !important;
+}
+
+.svg-complementary-3 svg.path-fill path,
+.svg-complementary-3 li svg.path-fill path {
+  fill: var(--color-complementary-3) !important;
+}
+
+.svg-complementary-3 svg.path-stroke path,
+.svg-complementary-3 li svg.path-stroke path {
+  stroke: var(--color-complementary-3) !important;
+}
+
+.svg-complementary-4 svg.path-fill path,
+.svg-complementary-4 li svg.path-fill path {
+  fill: var(--color-complementary-4) !important;
+}
+
+.svg-complementary-4 svg.path-stroke path,
+.svg-complementary-4 li svg.path-stroke path {
+  stroke: var(--color-complementary-4) !important;
+}
+
+.svg-link-dark svg.path-fill path,
+.svg-link-dark li svg.path-fill path {
+  fill: var(--color-primary-4) !important;
+}
+
+.svg-link-dark svg.path-stroke path,
+.svg-link-dark li svg.path-stroke path {
+  stroke: var(--color-primary-4) !important;
+}
+
+.svg-link-light svg.path-fill:hover path,
+.svg-link-light li:hover svg.path-fill path,
+.svg-link-dark svg.path-fill:hover path,
+.svg-link-dark li:hover svg.path-fill path {
+  fill: var(--color-tertiary-4) !important;
+  cursor: pointer !important;
+}
+
+.svg-link-light svg.path-stroke:hover path,
+.svg-link-light li svg.path-stroke:hover path,
+.svg-link-dark svg.path-stroke:hover path,
+.svg-link-dark li svg.path-stroke:hover path {
+  stroke: var(--color-tertiary-4) !important;
+  cursor: pointer !important;
+}
+
+.bg-blur {
+  background: var(--background-semi-light);
+  backdrop-filter: var(--filter-blur);
+  transition: background 300ms ease-in-out;
+}
+
+
+
+.bg-frame {
+  background-image: url('/gold-frame.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-animated {
+  background-image: url('/section-bg.svg');
+  background-size: cover;
+  background-repeat: repeat;
+  animation: move-bg 120s linear infinite;
+  width: 100%;
+  height: 100%;
+}
+@keyframes move-bg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes move-bg-left-right {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.degrade_card {
+  color: #000;
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.171))
+  ;
+  backdrop-filter: blur(1px);
+  padding-bottom: 80px;
+  padding-top: 60px;
+  
+}
+
+.display-img {
+  background-image: linear-gradient(to top, rgb(255, 255, 255), rgba(255, 255, 255, 0.589));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+button {
+  cursor: pointer !important;
+}
+
+.card-title {
+  color: var(--text-primary, rgba(0, 0, 0, 0.87));
+  text-align: justify;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Futura URW Extra Bold";
+  font-size: var(--font-size-0875-rem, 14px);
+  font-style: normal;
+  font-weight: var(--fontWeightRegular, 400);
+  line-height: 143%; /* 20.02px */
+  letter-spacing: 0.17px;
+}
