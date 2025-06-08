@@ -7,6 +7,7 @@ import MainCover from "@components/organism/MainCover";
 import CompanySection from "@components/organism/CompanySection";
 import BrandsSection from "@components/organism/BrandsSection";
 import Header from "@components/organism/Header";
+import InnovationSectionOrganism from "@components/organism/InnovationSectionOrganism";
 
 /**
  * Home
@@ -20,6 +21,27 @@ import ScrollFade from "@components/atoms/ScrollFade";
 import PolicyInfoSection from "./components/organism/PolicyInfoSection";
 import Footer from "./components/organism/Footer";
 import BrandCarousel from "./components/molecules/BrandCarousel";
+import InfoWithImage from "./components/organism/InfoWithImage";
+
+const solutions = [
+  { icon: "/icons/xperium.svg", alt: "Xperium", name: "Xperium", description: "Tienda online para tu negocio", href: "#xperium" },
+  { icon: "/icons/orvix.svg", alt: "Orvix", name: "Orvix", description: "Gestión total para empresas", href: "#orvix" },
+  { icon: "/icons/docuvex.svg", alt: "Docuvex", name: "Docuvex", description: "Gestor documental empresarial", href: "#docuvex" },
+  { icon: "/icons/insumex.svg", alt: "Insumex", name: "Insumex", description: "Insumos de oficina empresariales", href: "#insumex" },
+  { icon: "/icons/solvix.svg", alt: "Solvix", name: "Solvix", description: "Soluciones informáticas para empresas", href: "#solvix" },
+];
+
+const aboutUs = [
+  { icon: "/icons/star.svg", alt: "Identidad", text: "Nuestra identidad", href: "#identidad" },
+  { icon: "/icons/help.svg", alt: "Contáctanos", text: "Contactanos", href: "#contacto" },
+  { icon: "/icons/info.svg", alt: "Política", text: "Política de calidad", href: "#politica" },
+];
+
+const partners = [
+  { logo: "/icons/ilis.svg", alt: "Ilis Seguridad", name: "Ilis seguridad", href: "#ilis" },
+  { logo: "/icons/farallones.svg", alt: "Farallones", name: "Farallones Holding", href: "#farallones" },
+];
+
 
 const Home = (): JSX.Element => {
   return (
@@ -30,43 +52,62 @@ const Home = (): JSX.Element => {
         style={{ overflowX: "hidden" }}
       >
         <ScrollFade delay={0.1}>
-          <MainCover />
+          <MainCover
+            title="Soluciones digitales que conectan y transforman."
+            subtitle="Estamos contigo para ayudarte a crecer, destacar y dejar huella."
+            backgroundImageUrl="/assets/fondo-home.svg"
+          />
         </ScrollFade>
 
         <ScrollFade delay={0.5}>
-          <BrandCarousel
-            images={[
-              "/carrusel-hero/carrusel.svg",
-              "/carrusel-hero/carrusel2.svg",
-              "/carrusel-hero/carrusel3.svg",
-            ]}
-            speed={3000}
-            infinite={true}
-            autoplay={true}
-            autoplaySpeed={500}
-            showDots={false}
+          <InnovationSectionOrganism />
+        </ScrollFade>
+
+        <CustomSeparator height="32px" />
+
+        <ScrollFade delay={0.5}>
+          <InfoWithImage
+            imageSrc="/assets/infoImage-home-izquierda.svg"
+            imageAlt="Innovación"
+            title="Innovación que camina"
+            subtitle="contigo"
+            fondo="bg-gray-100"
+            description={`En nuestra start-up, no solo ofrecemos soluciones: las creamos contigo.
+            Cada paso que damos está inspirado en tus **desafíos reales**, para darte herramientas innovadoras que se sienten humanas, cercanas y efectivas.`}
+            imagePosition="left"
           />
         </ScrollFade>
 
         <CustomSeparator height="32px" />
 
         <ScrollFade delay={0.5}>
-          <CompanySection />
+          <InfoWithImage
+            imageSrc="/assets/infoImage-home-derecha.svg"
+            imageAlt="Innovación"
+            title="Tecnología intuitiva sin complicaciones"
+            subtitle="contigo"
+            description={`La innovación no tiene que ser complicada. 
+              Nuestras soluciones digitales son tan intuitivas y fáciles de usar que te permiten enfocarte en lo que realmente importa: hacer crecer tu negocio.`}
+            imagePosition="right"
+          />
         </ScrollFade>
-
-        <CustomSeparator height="32px" />
 
         <ScrollFade delay={0.5}>
-          <BrandsSection />
+          <MainCover
+            title="Confianza más allá de la entrega"
+            subtitle="En NXTARA no desaparecemos después de la entrega. Nuestro servicio postventa es parte esencial del valor: estamos contigo siempre, resolviendo dudas y adaptando mejoras que potencian tu negocio."
+            backgroundImageUrl="/assets/fondo-prefooter-home.svg"
+          />
         </ScrollFade>
 
-        <ScrollFade delay={0.5}>
-          <Banner mobileSrc="/banner-mobile.gif" desktopSrc="/banner.gif" />
 
-          <PolicyInfoSection />
-        </ScrollFade>
-
-        <Footer />
+        <Footer
+          solutions={solutions}
+          aboutUs={aboutUs}
+          partners={partners}
+          logo="/nxtara.svg"
+          altLogo="Nxtara Logo"
+        />;
       </main>
     </>
   );

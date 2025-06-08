@@ -1,80 +1,95 @@
-import React from "react";
-import Image from "next/legacy/image";
-import CustomSeparator from "@components/atoms/CustomSeparator";
-import ContactFooterSection from "@components/organism/ContactFooterSection";
+import Image from "next/image";
+import Link from "next/link";
 
-const phone = "56995098115";
-const message = encodeURIComponent("Hola, quiero más información.");
+interface Solution {
+  icon: string;
+  alt: string;
+  name: string;
+  description: string;
+  href: string;
+}
 
-const Footer = () => {
+interface LinkItem {
+  icon: string;
+  alt: string;
+  text: string;
+  href: string;
+}
+
+interface Partner {
+  logo: string;
+  alt: string;
+  name: string;
+  href: string;
+}
+
+interface FooterProps {
+  solutions: Solution[];
+  aboutUs: LinkItem[];
+  partners: Partner[];
+  logo: string;
+  altLogo: string;
+}
+
+const Footer: React.FC<FooterProps> = ({
+  solutions,
+  aboutUs,
+  partners,
+  logo,
+  altLogo,
+}) => {
   return (
-    <footer className="flex flex-col bg-primary-1 py-[32px] text-white">
-      {/* Mobile layout */}
-      <div className="flex flex-col items-center gap-6 px-[16px] text-center lg:hidden">
-        <Image
-          src="/icon-nxtara.svg"
-          width={104}
-          height={80}
-          alt="nxtara logo"
-          loading="lazy"
-        />
+    <footer className="bg-black text-white py-10 px-4 md:px-20">
+      <div className="flex flex-col md:flex-row justify-between gap-10 mb-6">
+        {/* Soluciones digitales */}
+        <div>
+          <h3 className="font-bold text-lg mb-4">Soluciones digitales</h3>
+          {solutions.map((s, idx) => (
+            <Link key={idx} href={s.href} className="flex items-start gap-3 mb-3 hover:underline">
+              <Image src={s.icon} alt={s.alt} width={20} height={20} />
+              <div>
+                <p className="font-semibold">{s.name}</p>
+                <p className="text-sm">{s.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
 
-        <ContactFooterSection />
+        {/* Nosotros */}
+        <div>
+          <h3 className="font-bold text-lg mb-4">Nosotros</h3>
+          {aboutUs.map((item, idx) => (
+            <Link key={idx} href={item.href} className="flex items-center gap-3 mb-3 hover:underline">
+              <Image src={item.icon} alt={item.alt} width={18} height={18} />
+              <p className="text-sm">{item.text}</p>
+            </Link>
+          ))}
+        </div>
 
-        <small className="text-primary-3 text-xs">
-          © 2025 NxTara. Todos los derechos reservados.
-        </small>
-
-        <CustomSeparator height="64px" />
+        {/* Alianzas */}
+        <div>
+          <h3 className="font-bold text-lg mb-4">Alianzas</h3>
+          {partners.map((p, idx) => (
+            <Link key={idx} href={p.href} className="flex items-center gap-3 mb-3 hover:underline">
+              <Image src={p.logo} alt={p.alt} width={20} height={20} />
+              <p className="text-sm">{p.name}</p>
+            </Link>
+          ))}
+        </div>
       </div>
 
-      {/* Desktop layout */}
-      <div className="hidden lg:flex flex-col gap-10 px-8 max-w-7xl mx-auto">
-        {/* Top - logo + navegación */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-10">
-          {/* Logo */}
-          <div>
-            <Image
-              src="/nxtara.svg"
-              width={400}
-              height={200}
-              alt="Logo Nxtara"
-              loading="lazy"
-            />
-          </div>
+      <div className="border-t border-fuchsia-600 w-full my-4" />
 
-          {/* Navegación rápida */}
-          <div className="flex flex-col gap-2 text-white">
-            <h4 className="font-semibold mb-2">Navegación rápida</h4>
-            <a href="#inicio" className="hover:underline">
-              Inicio
-            </a>
-            <a href="#servicios" className="hover:underline">
-              Nuestros Servicios
-            </a>
-            <a href="#calidad" className="hover:underline">
-              Política de calidad
-            </a>
-            <a
-              href={`https://wa.me/${phone}?text=${message}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              ¿Hablamos?
-            </a>
-          </div>
+      <div className="flex justify-between items-center">
+        <Image src={logo} alt={altLogo} width={100} height={30} />
+        <div className="flex gap-4">
+          <Link href="#facebook">
+            <Image src="/icons/facebook.svg" alt="Facebook" width={20} height={20} />
+          </Link>
+          <Link href="#instagram">
+            <Image src="/icons/instagram.svg" alt="Instagram" width={20} height={20} />
+          </Link>
         </div>
-
-        <CustomSeparator height="32px" />
-
-        <ContactFooterSection />
-
-        <div className="text-primary-3 text-sm text-center">
-          © 2025 NxTara. Todos los derechos reservados.
-        </div>
-
-        <CustomSeparator height="64px" />
       </div>
     </footer>
   );
