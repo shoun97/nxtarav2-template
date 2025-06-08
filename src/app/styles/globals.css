@@ -61,13 +61,13 @@
   --filter-blur: blur(4px);
 }
 
-* {
+/* * {
   overflow-x: hidden !important;
-}
+} */
 
-main * {
+/* main * {
   overflow-y: hidden !important;
-}
+} */
 
 Footer * {
   overflow-y: hidden !important;

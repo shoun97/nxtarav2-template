@@ -60,7 +60,28 @@ const Home = (): JSX.Element => {
         </ScrollFade>
 
         <ScrollFade delay={0.5}>
-          <InnovationSectionOrganism />
+          <InnovationSectionOrganism
+            title="Una tienda online con beneficios que marcan la diferencia"
+            features={[
+              {
+                iconSrc: "/assets/icons/venta.svg",
+                title: "1. Venta Simplificada",
+              },
+              {
+                iconSrc: "/assets/icons/branding.svg",
+                title: "2. Branding que Impacta",
+              },
+              {
+                iconSrc: "/assets/icons/catalogo.svg",
+                title: "3. Catálogo Online y Gestión Eficiente",
+              },
+              {
+                iconSrc: "/assets/icons/postventa.svg",
+                title: "4. Postventa Confiable",
+              },
+            ]}
+          />
+
         </ScrollFade>
 
         <CustomSeparator height="32px" />

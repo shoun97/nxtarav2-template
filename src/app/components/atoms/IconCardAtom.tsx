@@ -1,29 +1,53 @@
-// atoms/IconCardAtom.tsx
 import React from "react";
+import Image from "next/image";
 
 interface IconCardAtomProps {
-  icon: React.ReactNode;
+  iconSrc: string;
+  iconAlt?: string;
   title: string;
-  description: string;
-  bgColor?: string;
+  description?: string; // no usada ahora, pero sigue disponible
 }
 
 const IconCardAtom: React.FC<IconCardAtomProps> = ({
-  icon,
+  iconSrc,
+  iconAlt = "Ícono",
   title,
-  description,
-  bgColor = "#F5F5F5",
-}) => (
-  <div
-    className="p-4 rounded-xl shadow-md flex gap-4 items-start"
-    style={{ backgroundColor: bgColor }}
-  >
-    <div className="p-2 rounded-lg bg-white shadow-sm text-pink-600">{icon}</div>
-    <div>
-      <h4 className="font-semibold text-pink-600">{title}</h4>
-      <p className="text-gray-700 text-sm">{description}</p>
+}) => {
+  return (
+    <div
+      className="flex flex-col  rounded-[24px] shadow-md"
+      style={{
+        backgroundColor: "#F3F3F3",
+        padding: "13px 0px 59px 11px",
+        boxShadow: "0px 8px 8px 0px rgba(0, 0, 0, 0.25)",
+        width: "260px",
+      }}
+    >
+      {/* Icono */}
+      <div
+        style={{
+          width: "54px",
+          height: "54px",
+        }}
+      >
+        <Image src={iconSrc} alt={iconAlt} width={54} height={54} />
+      </div>
+
+      {/* Título */}
+      <div
+        className="flex flex-col justify-center self-stretch text-center"
+        style={{
+          color: "#222",
+          fontFamily: "Inter",
+          fontSize: "20px",
+          fontWeight: 700,
+          lineHeight: "normal",
+        }}
+      >
+        {title}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default IconCardAtom;
