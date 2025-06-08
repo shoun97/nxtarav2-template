@@ -9,16 +9,15 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
   return (
     <div
-      className={`fixed top-0 w-full z-[1000] transition-all duration-300 flex items-center justify-between px-6 md:px-12 ${
-        transparent ? "" : "bg-primary-1 shadow-lg"
-      }`}
+      className={`fixed top-0 w-full z-[1000] transition-all duration-300 flex items-center justify-between px-6 md:px-12 ${transparent ? "" : "bg-primary-1 shadow-lg"
+        }`}
       style={
         transparent
           ? {
-              background:
-                "linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%)",
-              backdropFilter: "blur(8px)",
-            }
+            background:
+              "linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%)",
+            backdropFilter: "blur(8px)",
+          }
           : {}
       }
     >
@@ -27,18 +26,19 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
 
       {/* Navegación derecha */}
       <div className="flex items-center gap-4 text-white font-medium text-sm md:text-base">
-        <Link href="#Home" className="hover:underline transition">
+        <Link href="/" className="hover:underline transition">
           Inicio
         </Link>
-        <Link href="#Identidad" className="hover:underline transition">
+        <Link href="/identidad" className="hover:underline transition">
           Nuestra identidad
         </Link>
 
         <button
           className="border border-white rounded-full px-4 py-1 hover:bg-white hover:text-black transition"
-          onClick={() => window.scrollTo({ top: 2000, behavior: "smooth" })}
         >
-          Soluciones digitales
+          <Link href="/soluciones" className="hover:underline transition">
+            Soluciones digitales
+          </Link>
         </button>
 
         {/* Botón WhatsApp */}
