@@ -2,10 +2,7 @@
 import { JSX } from "react";
 
 import CustomSeparator from "@components/atoms/CustomSeparator";
-import Banner from "@components/molecules/Banner";
 import MainCover from "@components/organism/MainCover";
-import CompanySection from "@components/organism/CompanySection";
-import BrandsSection from "@components/organism/BrandsSection";
 import Header from "@components/organism/Header";
 import InnovationSectionOrganism from "@components/organism/InnovationSectionOrganism";
 
@@ -18,28 +15,26 @@ import InnovationSectionOrganism from "@components/organism/InnovationSectionOrg
  * @returns {JSX.Element}
  */
 import ScrollFade from "@components/atoms/ScrollFade";
-import PolicyInfoSection from "./components/organism/PolicyInfoSection";
 import Footer from "./components/organism/Footer";
-import BrandCarousel from "./components/molecules/BrandCarousel";
 import InfoWithImage from "./components/organism/InfoWithImage";
 
 const solutions = [
-  { icon: "/icons/xperium.svg", alt: "Xperium", name: "Xperium", description: "Tienda online para tu negocio", href: "#xperium" },
-  { icon: "/icons/orvix.svg", alt: "Orvix", name: "Orvix", description: "Gestión total para empresas", href: "#orvix" },
-  { icon: "/icons/docuvex.svg", alt: "Docuvex", name: "Docuvex", description: "Gestor documental empresarial", href: "#docuvex" },
-  { icon: "/icons/insumex.svg", alt: "Insumex", name: "Insumex", description: "Insumos de oficina empresariales", href: "#insumex" },
-  { icon: "/icons/solvix.svg", alt: "Solvix", name: "Solvix", description: "Soluciones informáticas para empresas", href: "#solvix" },
+  { icon: "/assets/icons/xperium.svg", alt: "Xperium", name: "Xperium", description: "Tienda online para tu negocio", href: "#xperium" },
+  { icon: "/assets/icons/orvix.svg", alt: "Orvix", name: "Orvix", description: "Gestión total para empresas", href: "#orvix" },
+  { icon: "/assets/icons/docuvex.svg", alt: "Docuvex", name: "Docuvex", description: "Gestor documental empresarial", href: "#docuvex" },
+  { icon: "/assets/icons/insumex.svg", alt: "Insumex", name: "Insumex", description: "Insumos de oficina empresariales", href: "#insumex" },
+  { icon: "/assets/icons/solvix.svg", alt: "Solvix", name: "Solvix", description: "Soluciones informáticas para empresas", href: "#solvix" },
 ];
 
 const aboutUs = [
-  { icon: "/icons/star.svg", alt: "Identidad", text: "Nuestra identidad", href: "#identidad" },
-  { icon: "/icons/help.svg", alt: "Contáctanos", text: "Contactanos", href: "#contacto" },
-  { icon: "/icons/info.svg", alt: "Política", text: "Política de calidad", href: "#politica" },
+  { icon: "/assets/icons/star.svg", alt: "Identidad", text: "Nuestra identidad", href: "#identidad" },
+  { icon: "/assets/icons/help.svg", alt: "Contáctanos", text: "Contactanos", href: "#contacto" },
+  { icon: "/assets/icons/info.svg", alt: "Política", text: "Política de calidad", href: "#politica" },
 ];
 
 const partners = [
-  { logo: "/icons/ilis.svg", alt: "Ilis Seguridad", name: "Ilis seguridad", href: "#ilis" },
-  { logo: "/icons/farallones.svg", alt: "Farallones", name: "Farallones Holding", href: "#farallones" },
+  { logo: "/assets/icons/ilis.svg", alt: "Ilis Seguridad", name: "Ilis seguridad", href: "#ilis" },
+  { logo: "/assets/icons/farallones.svg", alt: "Farallones", name: "Farallones Holding", href: "#farallones" },
 ];
 
 
@@ -90,8 +85,8 @@ const Home = (): JSX.Element => {
           <InfoWithImage
             imageSrc="/assets/infoImage-home-izquierda.svg"
             imageAlt="Innovación"
-            title="Innovación que camina"
-            subtitle="contigo"
+            title="Innovación que camina contigo"
+            subtitle=""
             fondo="bg-gray-100"
             description={`En nuestra start-up, no solo ofrecemos soluciones: las creamos contigo.
             Cada paso que damos está inspirado en tus **desafíos reales**, para darte herramientas innovadoras que se sienten humanas, cercanas y efectivas.`}
@@ -106,7 +101,7 @@ const Home = (): JSX.Element => {
             imageSrc="/assets/infoImage-home-derecha.svg"
             imageAlt="Innovación"
             title="Tecnología intuitiva sin complicaciones"
-            subtitle="contigo"
+            subtitle=""
             description={`La innovación no tiene que ser complicada. 
               Nuestras soluciones digitales son tan intuitivas y fáciles de usar que te permiten enfocarte en lo que realmente importa: hacer crecer tu negocio.`}
             imagePosition="right"

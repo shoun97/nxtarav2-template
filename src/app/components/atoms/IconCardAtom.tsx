@@ -38,10 +38,7 @@ const IconCardAtom: React.FC<IconCardAtomProps> = ({
         className="flex flex-col justify-center self-stretch text-center"
         style={{
           color: "#222",
-          fontFamily: "Inter",
-          fontSize: "20px",
-          fontWeight: 700,
-          lineHeight: "normal",
+          fontSize: "18px",
         }}
       >
         {title}

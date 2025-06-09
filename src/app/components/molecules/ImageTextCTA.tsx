@@ -66,10 +66,10 @@ const ImageTextCTA: React.FC<ImageTextCTAProps> = ({
         <p className="text-gray-800 text-sm leading-relaxed mb-5 md:text-[15px] md:leading-[24px]">
           {description}
         </p>
-        <div className="flex justify-center md:justify-start">
+        <div className="flex justify-center md:justify-center">
           <Link
             href={ctaLink}
-            className="text-[#ff007a] text-sm font-semibold hover:underline flex items-center gap-1"
+            className="text-[#ff007a] text-sm font-semibold hover:underline flex items-center gap-1 text-center"
           >
             {ctaText}
             <span>➜</span>

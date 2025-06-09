@@ -84,10 +84,10 @@ const Footer: React.FC<FooterProps> = ({
         <Image src={logo} alt={altLogo} width={100} height={30} />
         <div className="flex gap-4">
           <Link href="#facebook">
-            <Image src="/icons/facebook.svg" alt="Facebook" width={20} height={20} />
+            <Image src="/assets/icons/facebook.svg" alt="Facebook" width={20} height={20} />
           </Link>
           <Link href="#instagram">
-            <Image src="/icons/instagram.svg" alt="Instagram" width={20} height={20} />
+            <Image src="/assets/icons/instagram.svg" alt="Instagram" width={20} height={20} />
           </Link>
         </div>
       </div>
