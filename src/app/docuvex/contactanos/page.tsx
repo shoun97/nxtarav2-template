@@ -1,15 +1,9 @@
 'use client';
 
 import FooterDocuvex from "@/components/organism/Footer-docuvex";
-import { Metadata } from "next";
 import Image from "next/image";
 import Header from "@/components/organism/Header";
 
-export const metadata: Metadata = {
-  title: "Contáctanos | Docuvex - Nxtara",
-  description: "Canales oficiales de contacto del equipo de soporte de Docuvex",
-  robots: "index, follow",
-};
 
 export default function ContactanosPage() {
   return (
