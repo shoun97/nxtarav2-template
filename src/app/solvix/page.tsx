@@ -82,13 +82,13 @@ const Home = (): JSX.Element => {
 
         <ScrollFade delay={0.5}>
           <InfoWithImage
-            imageSrc="/assets/docuvex/chica-docuvex.svg"
-            imageAlt="chica-docuvex"
-            title="Agilidad documental sin complicaciones"
+            imageSrc="/assets/solvix/soporte-solvix.svg"
+            imageAlt="chica-solvix"
+            title="Soporte técnico especializado"
             subtitle=""
             fondo="bg-gray-100"
             description={`
-              Optimiza el flujo de trabajo y accede a tus documentos en segundos, gracias a un sistema diseñado para ser rápido, eficiente y fácil de usar.
+              Contamos con un equipo experto en resolver fallos, prevenir errores y mantener operativa tu infraestructura tecnológica. Desde software hasta hardware, aseguramos un entorno sin interrupciones.
               `}
             imagePosition="left"
           />
@@ -97,12 +97,12 @@ const Home = (): JSX.Element => {
 
         <ScrollFade delay={0.5}>
           <InfoWithImage
-            imageSrc="/assets/docuvex/team-grafico-docuvex.svg"
-            imageAlt="Innovación"
-            title="Trazabilidad total en cada archivo"
+            imageSrc="/assets/solvix/redes-solvix.svg"
+            imageAlt="redes-solvix"
+            title="Redes que conectan sin fallas"
             subtitle=""
             fondo="bg-gray-100"
-            description={`Sigue cada cambio, movimiento y actualización de tus documentos con un sistema que registra cada detalle y mantiene el control total.`}
+            description={`Instalamos y mantenemos redes cableadas y estructuradas para garantizar conexiones estables, rápidas y seguras dentro de tu empresa.`}
             imagePosition="right"
           />
         </ScrollFade>
@@ -110,24 +110,24 @@ const Home = (): JSX.Element => {
 
         <ScrollFade delay={0.5}>
           <InfoWithImage
-            imageSrc="/assets/docuvex/seguridad-docuvex.svg"
-            imageAlt="Innovación"
-            title="Seguridad y privacidad"
+            imageSrc="/assets/solvix/network-solvix.svg"
+            imageAlt="network-solvix"
+            title="Tecnología adaptada a tu negocio"
             subtitle=""
             fondo="bg-gray-100"
-            description={`Protege tus archivos más sensibles con encriptación avanzada y acceso seguro, garantizando que solo las personas autorizadas puedan ingresar.`}
+            description={`Integramos soluciones informáticas que se ajustan a la realidad operativa de tu empresa, sin importar si los sistemas son propios o de terceros.`}
             imagePosition="left"
           />
         </ScrollFade>
 
         <ScrollFade delay={0.5}>
           <InfoWithImage
-            imageSrc="/assets/docuvex/trabajo-equipo-docuvex.svg"
-            imageAlt="Innovación"
-            title="Trabajo en equipo sin barreras"
+            imageSrc="/assets/solvix/prevencion-solvix.svg"
+            imageAlt="prevencion-solvix"
+            title="Prevención y respuesta rápida"
             subtitle=""
             fondo="bg-gray-100"
-            description={`Colabora con tu equipo desde cualquier lugar, compartiendo documentos en tiempo real sin perder el control ni la seguridad.`}
+            description={`Monitorizamos, diagnosticamos y resolvemos problemas antes de que afecten tu operación. Nuestro enfoque es preventivo, pero siempre estamos listos para actuar cuando más lo necesitas.`}
             imagePosition="right"
           />
         </ScrollFade>
