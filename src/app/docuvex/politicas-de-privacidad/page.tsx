@@ -1,36 +1,36 @@
-import fs from "fs";
-import path from "path";
-import { Metadata } from "next";
-import { parseMDX } from "@/utils/mdx";
+"use client"; // <== MARCA COMPLETA LA PÁGINA COMO CLIENTE
+
+import { useEffect, useState } from "react";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 import Header from "@/components/organism/Header";
 import FooterDocuvex from "@/components/organism/Footer-docuvex";
 import Banner from "@/components/molecules/Banner";
-import PoliticaContentSwitcher from "@/components/organism/PoliticaContentSwitcher";
+import PoliticaHTMLView from "@/components/organism/PoliticaHTMLView";
 
-export const metadata: Metadata = {
-  title: "Políticas de Privacidad | Docuvex - Nxtara",
-  description: "Conoce nuestras políticas de privacidad",
-  robots: "index, follow",
-};
+export default function PoliticaPrivacidad() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [mdxSource, setMdxSource] = useState<MDXRemoteSerializeResult | null>(null);
 
-export default async function PoliticaPrivacidad() {
-  const filePath = path.join(
-    process.cwd(),
-    "src",
-    "app",
-    "components",
-    "organism",
-    "politicas.mdx"
-  );
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
 
-  let mdxSource = null;
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
 
-  try {
-    const source = fs.readFileSync(filePath, "utf8");
-    mdxSource = await parseMDX(source);
-  } catch (error) {
-    console.error("Error al cargar el archivo MDX:", error);
-  }
+  useEffect(() => {
+    const fetchAndParseMDX = async () => {
+      const res = await fetch("/docuvex/politicas.mdx");
+      const raw = await res.text();
+      const mdx = await serialize(raw);
+      setMdxSource(mdx);
+    };
+
+    fetchAndParseMDX();
+  }, []);
 
   return (
     <>
@@ -40,12 +40,16 @@ export default async function PoliticaPrivacidad() {
         mobileSrc="/header-docuvex-politicas.svg"
       />
       <main className="flex flex-col items-center justify-center px-6 py-12">
-        {mdxSource ? (
-          <PoliticaContentSwitcher mdxSource={mdxSource} />
+        {isMobile ? (
+          mdxSource ? (
+            <div className="prose max-w-4xl w-full">
+              <MDXRemote {...mdxSource} />
+            </div>
+          ) : (
+            <p className="text-gray-500 text-center">Cargando contenido...</p>
+          )
         ) : (
-          <p className="text-center text-gray-500">
-            No se pudo cargar el contenido de políticas.
-          </p>
+          <PoliticaHTMLView />
         )}
       </main>
       <div style={{ height: "100px" }}></div>
