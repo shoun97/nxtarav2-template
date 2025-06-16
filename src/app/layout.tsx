@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { Montserrat } from "next/font/google";
+import Footer from "@components/organism/Footer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -53,6 +54,10 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
         <div className="block lg:hidden">
           <BottomNavigationBar />
         </div>
+        <Footer
+          logo="/nxtara.svg"
+          altLogo="Nxtara Logo"
+        />
       </body>
     </html>
   );

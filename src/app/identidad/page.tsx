@@ -10,7 +10,6 @@ import InfoWithImage from "@/components/organism/InfoWithImage";
 
 import ScrollFade from "@components/atoms/ScrollFade";
 
-
 const Home = (): JSX.Element => {
   return (
     <>
@@ -132,7 +131,6 @@ const Home = (): JSX.Element => {
             imagePosition="right"
           />
         </ScrollFade>
-
       </main>
     </>
   );

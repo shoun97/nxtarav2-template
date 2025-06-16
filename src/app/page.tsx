@@ -15,27 +15,7 @@ import InnovationSectionOrganism from "@components/organism/InnovationSectionOrg
  * @returns {JSX.Element}
  */
 import ScrollFade from "@components/atoms/ScrollFade";
-import Footer from "./components/organism/Footer";
-import InfoWithImage from "./components/organism/InfoWithImage";
-
-const solutions = [
-  { icon: "/assets/icons/xperium.svg", alt: "Xperium", name: "Xperium", description: "Tienda online para tu negocio", href: "#xperium" },
-  { icon: "/assets/icons/orvix.svg", alt: "Orvix", name: "Orvix", description: "Gestión total para empresas", href: "#orvix" },
-  { icon: "/assets/icons/docuvex.svg", alt: "Docuvex", name: "Docuvex", description: "Gestor documental empresarial", href: "#docuvex" },
-  { icon: "/assets/icons/insumex.svg", alt: "Insumex", name: "Insumex", description: "Insumos de oficina empresariales", href: "#insumex" },
-  { icon: "/assets/icons/solvix.svg", alt: "Solvix", name: "Solvix", description: "Soluciones informáticas para empresas", href: "#solvix" },
-];
-
-const aboutUs = [
-  { icon: "/assets/icons/star.svg", alt: "Identidad", text: "Nuestra identidad", href: "#identidad" },
-  { icon: "/assets/icons/help.svg", alt: "Contáctanos", text: "Contactanos", href: "#contacto" },
-  { icon: "/assets/icons/info.svg", alt: "Política", text: "Política de calidad", href: "#politica" },
-];
-
-const partners = [
-  { logo: "/assets/icons/ilis.svg", alt: "Ilis Seguridad", name: "Ilis seguridad", href: "#ilis" },
-  { logo: "/assets/icons/farallones.svg", alt: "Farallones", name: "Farallones Holding", href: "#farallones" },
-];
+import InfoWithImage from "@components/organism/InfoWithImage";
 
 
 const Home = (): JSX.Element => {
@@ -117,13 +97,7 @@ const Home = (): JSX.Element => {
         </ScrollFade>
 
 
-        <Footer
-          solutions={solutions}
-          aboutUs={aboutUs}
-          partners={partners}
-          logo="/nxtara.svg"
-          altLogo="Nxtara Logo"
-        />
+
       </main>
     </>
   );

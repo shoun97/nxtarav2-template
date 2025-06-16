@@ -1,6 +1,5 @@
 'use client';
 
-import FooterDocuvex from "@/components/organism/Footer-docuvex";
 import Image from "next/image";
 import Header from "@/components/organism/Header";
 
@@ -80,7 +79,6 @@ export default function ContactanosPage() {
           </div>
         </div>
       </main>
-      <FooterDocuvex />
     </>
   );
 }

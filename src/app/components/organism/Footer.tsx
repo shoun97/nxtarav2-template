@@ -1,40 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface Solution {
-  icon: string;
-  alt: string;
-  name: string;
-  description: string;
-  href: string;
-}
 
-interface LinkItem {
-  icon: string;
-  alt: string;
-  text: string;
-  href: string;
-}
-
-interface Partner {
-  logo: string;
-  alt: string;
-  name: string;
-  href: string;
-}
 
 interface FooterProps {
-  solutions: Solution[];
-  aboutUs: LinkItem[];
-  partners: Partner[];
   logo: string;
   altLogo: string;
 }
 
+const solutions = [
+  { icon: "/assets/icons/xperium.svg", alt: "Xperium", name: "Xperium", description: "Tienda online para tu negocio", href: "#xperium" },
+  { icon: "/assets/icons/orvix.svg", alt: "Orvix", name: "Orvix", description: "Gestión total para empresas", href: "#orvix" },
+  { icon: "/assets/icons/docuvex.svg", alt: "Docuvex", name: "Docuvex", description: "Gestor documental empresarial", href: "#docuvex" },
+  { icon: "/assets/icons/insumex.svg", alt: "Insumex", name: "Insumex", description: "Insumos de oficina empresariales", href: "#insumex" },
+  { icon: "/assets/icons/solvix.svg", alt: "Solvix", name: "Solvix", description: "Soluciones informáticas para empresas", href: "#solvix" },
+];
+
+const aboutUs = [
+  { icon: "/assets/icons/star.svg", alt: "Identidad", text: "Nuestra identidad", href: "#identidad" },
+  { icon: "/assets/icons/help.svg", alt: "Contáctanos", text: "Contactanos", href: "#contacto" },
+  { icon: "/assets/icons/info.svg", alt: "Política", text: "Política de calidad", href: "#politica" },
+];
+
+const partners = [
+  { logo: "/assets/icons/ilis.svg", alt: "Ilis Seguridad", name: "Ilis seguridad", href: "#ilis" },
+  { logo: "/assets/icons/farallones.svg", alt: "Farallones", name: "Farallones Holding", href: "#farallones" },
+];
+
 const Footer: React.FC<FooterProps> = ({
-  solutions,
-  aboutUs,
-  partners,
+
   logo,
   altLogo,
 }) => {
