@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { Montserrat } from "next/font/google";
-import WhatsAppFloatingButton from "./components/atoms/WhatsAppFloatingButton";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -49,9 +48,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     <html lang="es" className={montserrat.variable}>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body>
-        
         {children}
-        <WhatsAppFloatingButton />
         {/* Barra inferior solo en mobile */}
         <div className="block lg:hidden">
           <BottomNavigationBar />
@@ -60,6 +57,5 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     </html>
   );
 };
-
 
 export default RootLayout;

@@ -2,7 +2,7 @@ import React from "react";
 import FeatureGroupMolecule, { FeatureCard } from "../molecules/FeatureGroupMolecule";
 
 interface InnovationSectionOrganismProps {
-  title: string;
+  title?: string;
   subtitle?: string;
   features: FeatureCard[];
 }

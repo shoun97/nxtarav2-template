@@ -4,7 +4,7 @@ import IconCardAtom from "../atoms/IconCardAtom";
 export interface FeatureCard {
   iconSrc: string;
   iconAlt?: string;
-  title: string;
+  title?: string;
   description?: string;
   bgColor?: string;
 }
@@ -16,7 +16,10 @@ interface FeatureGroupMoleculeProps {
 const FeatureGroupMolecule: React.FC<FeatureGroupMoleculeProps> = ({ features }) => (
   <div className="flex flex-wrap justify-center gap-6 mt-8">
     {features.map((feature, index) => (
-      <IconCardAtom key={index} {...feature} />
+      <>
+        <IconCardAtom key={index} {...feature} />
+        
+      </>
     ))}
   </div>
 );

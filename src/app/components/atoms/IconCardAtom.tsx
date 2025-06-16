@@ -4,14 +4,15 @@ import Image from "next/image";
 interface IconCardAtomProps {
   iconSrc: string;
   iconAlt?: string;
-  title: string;
-  description?: string; // no usada ahora, pero sigue disponible
+  title?: string;
+  description?: string;
 }
 
 const IconCardAtom: React.FC<IconCardAtomProps> = ({
   iconSrc,
   iconAlt = "Ícono",
   title,
+  description,
 }) => {
   return (
     <div
@@ -24,24 +25,36 @@ const IconCardAtom: React.FC<IconCardAtomProps> = ({
       }}
     >
       {/* Icono */}
-      <div
-        style={{
-          width: "54px",
-          height: "54px",
-        }}
-      >
-        <Image src={iconSrc} alt={iconAlt} width={54} height={54} />
-      </div>
 
       {/* Título */}
       <div
-        className="flex flex-col justify-center self-stretch text-center"
+        className="flex  justify-center align-center self-stretch text-center"
         style={{
           color: "#222",
           fontSize: "18px",
         }}
       >
+        <div
+          style={{
+            width: "54px",
+            height: "54px",
+          }}
+        >
+          <Image src={iconSrc} alt={iconAlt} width={54} height={54} />
+        </div>
         {title}
+      </div>
+      {/* Descripción */}
+      <div>
+        <div
+          className="flex flex-col-reverse justify-center self-stretch text-center"
+          style={{
+            color: "#222",
+            fontSize: "14px",
+          }}
+        >
+          {description}
+        </div>
       </div>
     </div>
   );

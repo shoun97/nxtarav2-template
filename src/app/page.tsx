@@ -57,23 +57,23 @@ const Home = (): JSX.Element => {
         <ScrollFade delay={0.5}>
           <InnovationSectionOrganism
             title="Una tienda online con beneficios que marcan la diferencia"
+            subtitle="Cada negocio es único. Nuestras soluciones digitales se adaptan a tus necesidades, optimizan procesos y mejoran la conexión con tu audiencia"
             features={[
               {
-                iconSrc: "/assets/icons/venta.svg",
-                title: "1. Venta Simplificada",
+                iconSrc: "/assets/icons/touch.svg",
+                title: "Interacción intuitiva",
+                description: "Nuestra tienda online te permite vender de manera eficiente y atractiva.",
               },
               {
-                iconSrc: "/assets/icons/branding.svg",
-                title: "2. Branding que Impacta",
+                iconSrc: "/assets/icons/handshake.svg",
+                title: "Postventa confiable",
+                description: "Ofrecemos atención inmediata y apoyo constante, generando confianza y fidelidad en tus clientes.",
               },
               {
-                iconSrc: "/assets/icons/catalogo.svg",
-                title: "3. Catálogo Online y Gestión Eficiente",
-              },
-              {
-                iconSrc: "/assets/icons/postventa.svg",
-                title: "4. Postventa Confiable",
-              },
+                iconSrc: "/assets/icons/ecualizadores.svg",
+                title: "Escalabilidad con tu negocio",
+                description: "Nuestras soluciones crecen contigo, adaptándose a tus necesidades para facilitar la expansión.",
+              }
             ]}
           />
 
@@ -123,7 +123,7 @@ const Home = (): JSX.Element => {
           partners={partners}
           logo="/nxtara.svg"
           altLogo="Nxtara Logo"
-        />;
+        />
       </main>
     </>
   );

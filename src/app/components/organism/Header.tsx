@@ -1,6 +1,7 @@
 import React from "react";
 import CustomLogo from "@components/atoms/CustomLogo";
 import Link from "next/link";
+import Image from "next/image";
 
 interface HeaderProps {
   transparent?: boolean;
@@ -51,6 +52,7 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
           }
           className="ml-2 rounded-full p-2 bg-white/10 hover:bg-white/20 transition text-white"
         >
+          <Image src="/assets/icons/wsp-icon.svg" alt="WhatsApp" width={24} height={24} />
         </button>
       </div>
     </div>
